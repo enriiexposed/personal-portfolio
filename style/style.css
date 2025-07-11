@@ -1,34 +1,70 @@
+/* ============================
+   🎨 Variables de Color
+============================ */
 :root {
-  --color-1: #d6eaf8;
-  --color-2: #aed6f1;
-  --color-3: #5dade2;
-  --color-4: #2e86c1;
-  --color-5: #3498db;
-  --color-6: #eb984e;
+  --mindaro:        #d9ed92ff;
+  --light-green:    #b5e48cff;
+  --light-green-2:  #99d98cff;
+  --emerald:        #76c893ff;
+  --keppel:         #52b69aff;
+  --verdigris:      #34a0a4ff;
+  --bondi-blue:     #168aadff;
+  --cerulean:       #1a759fff;
+  --lapis-lazuli:   #1e6091ff;
+  --indigo-dye:     #184e77ff;
+  --black:          #2b2d42ff;
+  --white:          #edf2f4ff;
 }
 
+
 @font-face {
-  font-family: 'RobotoMono';
-  src: url('fonts/RobotoMono-Regular.woff2') format('woff2'),
-       url('fonts/RobotoMono-Regular.woff') format('woff');
+  font-family: 'Inconsolata';
+  src: url('assets/fonts/Inconsolata-Regular.woff2') format('woff2'),
+       url('assets/fonts/Inconsolata-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-html, body {
-  padding: 0;
-  margin: 0;
-  font-family: 'RobotoMono', sans-serif;
-  background: linear-gradient(to bottom, var(--color-4), var(--color-6));
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('assets/fonts/RobotoMono-Regular.woff2') format('woff2'),
+       url('assets/fonts/RobotoMono-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-main {
-  flex: 1;
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins-Regular.woff2') format('woff2'),
+       url('assets/fonts/Poppins-Regular.woff') format('woff'),
+       url('assets/fonts/Poppins-Black.woff2') format('woff2'),
+       url('assets/fonts/Poppins-Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inconsolata', 'RobotoMono', 'Poppins', sans-serif;
+  background: var(--bondi-blue);
+}
+
+img {
+  max-width: 100%; /* asegura que las imágenes no excedan el ancho del contenedor */
+  height: auto;
 }
 
 #background-color {
-  
   min-height: 100vh; /* asegura que cubra toda la altura de la ventana */
 }
 
@@ -40,23 +76,23 @@ main {
   gap: 10px; /* espacio entre elementos */
   justify-content: center;
   align-items: center;
-  background-color: var(--color-4); 
+  background-color: var(--verdigris); 
 }
 
 a {
   display: inline-block;
-  padding: 2rem 2rem;
+  margin: 2rem 4rem 2rem 4rem;
   font-size: 2.5rem;
   font-weight: 500;
   color: var(--color-1);
   background-color: transparent;
   border-radius: 8px;
   text-decoration: none;
-  transition: transform 0.3s ease, background-color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 a:hover {
-  background-color: var(--color-6);
+  background-color: var(--light-green);
   transform: scale(1.3);
 }
 
@@ -64,7 +100,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1.5rem auto 1.5rem auto;
+  margin: 3rem auto 3rem auto;
 }
 
 .header-image {
@@ -74,8 +110,7 @@ header {
 }
 
 .header-image img {
-  width: 20vw;                /* 20% del ancho de la ventana */
-  max-width: 200px;           /* límite máximo opcional */
+  max-width: 300px;           /* límite máximo opcional */
   height: auto;               /* mantiene proporción */
   border-radius: 50%;         /* círculo si la imagen es cuadrada */
   border: 0.4rem solid var(--color-5);  /* borde relativo al tamaño de fuente */
@@ -89,25 +124,108 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 10vh;
 }
 
-.header-container h1 {
-  margin: 0;
-}
-
+.header-container h1,
 .header-container h2 {
-  margin: 0;
+  font-size: 2.5rem;
+  color: var(--color-1);
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.icons img {
+  margin: 0 1rem;
+  width: 40px; /* tamaño de los iconos */
+  height: 40px; /* tamaño de los iconos */
+  transition: transform 0.3s ease;
+}
+
+main {
+  flex: 1; /* permite que el main ocupe el espacio restante */
+  margin: 3rem;
+}
+
+main h1 {
+  font-size: 3rem;
+  color: var(--color-1);
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#animated-title span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+}
+
+.cards {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,  300px); /* dos columnas */
+  max-width: 70%;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.cards p {
+  font-size: 2rem;
+  color: var(--black);
+  text-align: center;
+}
+
+.card-container {
+  border: 2px solid var(--black); /* borde visible */
+  border-radius: 50px;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1.2rem 1rem rgba(0, 0, 0, 0.2);
+  background-color: var(--keppel);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 4rem auto 4rem auto; /* margen superior para separar del header */
+}
+
+.card-container img {
+  width: 70%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.card-spanned {
+  grid-column: span 2; /* ocupa dos columnas */
+}
+
+.card-container h1 {
+  font-size: 2.5rem;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
   text-align: center;
   z-index: 1000;         /* para que esté sobre otros elementos */
-  padding: 1rem;
-  font-weight: 600;
+  background-color: var(--indigo-dye);
+  font-weight: 400;
   font-size:1.7rem;
+  color: #fff;
 }

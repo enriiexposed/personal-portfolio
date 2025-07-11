@@ -6,39 +6,62 @@
     <link href=/style/style.css rel="stylesheet" type="text/css"></style>
     <title>Document</title>
 </head>
-<body>
-    <div id="background-color">
-        <nav class="nav-links">
-            <ul class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Quién Soy?</a>
-                <a href="#">Mis proyectos</a>
-                <a href="#">Contacto</a>
-            </ul>
-        </nav>
-        <header>
-            <div class="header-image">
-                <img src="assets/images/yo.jpg" alt="Una foto de mi cara">
-            </div>
-            <div class="header-container">
-                <h1 class="header-title">Enrique Ríos</h1>
-                <h2 class="header-title">Ingeniero Informático</h2>
-            <div>
-        </header>
-        <footer>
-            <p>Diseñado por Enrique Ríos</p>
-            <p>© 2023 Todos los derechos reservados</p>
-        </footer>
-        <main>
-            <section class="age">
+<body id="background-color">
+    <nav class="nav-links">
+        <ul class="nav-links">
+            <a href="#">Home</a>
+            <a href="aboutme.html">Quién Soy?</a>
+            <a href="#">Mis proyectos</a>
+            <a href="#">Contacto</a>
+        </ul>
+    </nav>
+    <header>
+        <div class="header-image">
+            <img src="assets/images/yo.jpg" alt="Una foto de mi cara">
+        </div>
+        <div class="header-container">
+            <h1>Enrique Ríos</h1>
+            <h2>Ingeniero Informático</h2>
+        <div>
+        <div class="icons">
+            <a href="https://github.com/enriiexposed" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/github-mark.svg" alt="El icono oficial de Github, al hacer click en él se puede consultar mi perfil de GitHub" class="icon" width="40" height="40"/>
+            </a>
+            <a href="https://linkedin.com/enrique-rios-rodriguez" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/linkedin-black.png" alt="El icono oficial de LinkedIn, al hacer click en él se puede consultar mi perfil de LinkedIn" class="icon" width="40" height="40"/>
+            </a>
+        </div>
+    </header>
+    <main>
+        <h1 id="animated-title">Antes de ver lo que hago, un poco más sobre mí...</h1>
+        <div class="cards">
+            <section class="card-container">
                 <h1>¿Cuantos años tengo?</h1>
                 <p id="calculate-age"></p>
             </section>
-            <section class="university">
+            <section class="card-container">
                 <h1>¿Donde he estudiado?</h1>
-                <p></p>
-        </main>
-    </div>
+                <p>Universidad Complutense de Madrid</p>
+            </section>
+            <section class="card-container">
+                <h1>¿De dónde soy?</h1>
+                <p>Madrid, España</p>
+            </section>
+            <section class="card-container card-spanned">
+                <h1>Antes de la univeridad, estudié en...</h1>
+                <p>Mercedarias de Alarcón (2007-2020)</p>
+                <p>IES Beatriz Galindo(2020-2022)</p>
+            </section>
+            <section class="card-container">
+                <h1>Algunos de mis Hobbies</h1>
+                <p>🏀⚽🎮</p>
+            </section>
+        </div>  
+    </main>
+    <footer>
+        <p>Diseñado por Enrique Ríos</p>
+        <p>© 2023 Todos los derechos reservados</p>
+    </footer>
     <script type="module" src="scripts/script.js" crossorigin="anonymous"></script>
 </body>
 </html>
